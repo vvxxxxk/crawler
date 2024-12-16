@@ -7,3 +7,11 @@ spring:
     username: ENC(3PTnigKzY+Rwwqfm9FpsJ8NBWi/H5WQU)
     password: ENC(eaeh37kLlSfInbZ3WfTWqk3uzjThUqh9)
     driver-class-name: org.postgresql.Driver
+
+selenium:
+  browser: chrome
+  headless: true    # 헤드리스 모드 활성화 여부
+  driver-path: classpath:static/chromedriver_win32/chromedriver.exe #C:\Users\bw962\Documents\Projects\crawler\src\main\resources\static\chromedriver_win32\chromedriver.exe
+  window-size:
+    width: 1920
+    height: 1080

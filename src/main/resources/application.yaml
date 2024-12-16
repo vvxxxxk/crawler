@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_crawler
+    username: # 데이터베이스 username
+    password: # 데이터베이스 password
+    driver-class-name: org.postgresql.Driver

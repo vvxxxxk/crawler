@@ -1,6 +1,9 @@
+server:
+  port: 8080
+
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/db_crawler
-    username: # 데이터베이스 username
-    password: # 데이터베이스 password
+    url: ENC(oji3pFtCfA2r9FC8ICtNKDqCF/HOMC76sYrjyVp5Psh5d6icDLJawWOukVJLkD8B4jxHNee9i3Y=)
+    username: ENC(3PTnigKzY+Rwwqfm9FpsJ8NBWi/H5WQU)
+    password: ENC(eaeh37kLlSfInbZ3WfTWqk3uzjThUqh9)
     driver-class-name: org.postgresql.Driver

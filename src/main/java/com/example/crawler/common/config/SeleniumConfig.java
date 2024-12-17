@@ -32,17 +32,7 @@ public class SeleniumConfig {
     @Value("${selenium.window-size.height}")
     private int windowHeight;
 
-    private WebDriver webDriver;
-
-    @PreDestroy
-    public void tearDown() {
-        if (this.webDriver != null) {
-            log.info("Shutting down WebDriver...");
-            this.webDriver.quit();
-        }
-    }
-
-    public WebDriver createWebDriver() throws IOException {
+    public WebDriver createWebDriver() {
         String absoluteDriverPath = getAbsolutePath(driverPath);
         if (browser.equals("chrome")) {
             System.setProperty("webdriver.chrome.driver", absoluteDriverPath);

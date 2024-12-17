@@ -1,13 +1,14 @@
 package com.example.crawler.controller;
 
-import com.example.crawler.model.dto.request.CrawlingRequestDto;
+import com.example.crawler.model.dto.response.ResponseDto;
 import com.example.crawler.service.CrawlingService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
+import java.util.Map;
 
 @Slf4j
 @RestController
@@ -17,13 +18,13 @@ public class CrawlingController {
 
     private final CrawlingService crawlingService;
 
-    @PostMapping("/hsd")
-    public ResponseEntity<?> hsdCrawling(@RequestBody CrawlingRequestDto params) {
-        log.info("params: {}", params);
-
-        crawlingService.executeCrawling(params);
-
-        return null;
+    @GetMapping("/hsd/menus")
+    public ResponseEntity<ResponseDto> getHsdMenus() throws InterruptedException {
+        Map<String, Object> result = crawlingService.crawlingHsdMenus();
+        return ResponseEntity.ok(ResponseDto.builder()
+                .status(HttpStatus.OK.value())
+                .message("success")
+                .data(result)
+                .build());
     }
-
 }
